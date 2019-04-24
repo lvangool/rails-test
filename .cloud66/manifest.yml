@@ -1,0 +1,3 @@
+rails:
+  configuration:
+    operating_system: ubuntu1804
