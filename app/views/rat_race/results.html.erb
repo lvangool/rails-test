@@ -1,0 +1,8 @@
+<h1>Welcome to the Rat Race!</h1>
+<h2>Race Results:</h2>
+<% @rats.each_with_index do |rat, idx| %>
+<p><strong><%= idx + 1 %>. <%=rat.name%></strong> <span style="color: #666666">&mdash; <%= rat.speed %>mph</span></p>
+<% end %>
+<p>
+<a href="run" data-method="post" class="button">Another Race!</a>
+</p>
