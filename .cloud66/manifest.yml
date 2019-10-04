@@ -1,4 +1,5 @@
 rails:
   configuration:
     operating_system: ubuntu1804
-    health: default
+    health: 
+      accept: ['500']
