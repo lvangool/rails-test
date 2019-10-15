@@ -3,4 +3,4 @@ rails:
     operating_system: ubuntu1804
     health: 
       timeout: 10
-      accept: ['200']
+      accept: ['300']
