@@ -2,4 +2,4 @@ rails:
   configuration:
     operating_system: ubuntu1804
     health: 
-      accept: ['200']
+      accept: ['500']
