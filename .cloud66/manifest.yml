@@ -2,5 +2,5 @@ rails:
   configuration:
     operating_system: ubuntu1804
     health: 
-      timeout: 5
-      accept: ['500']
+      timeout: 10
+      accept: ['200']
