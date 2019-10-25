@@ -47,3 +47,7 @@ bower.json
 # Ignore node_modules
 node_modules/
 
+# ingnore webpacker assets
+public/packs
+public/assets
+
