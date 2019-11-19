@@ -20,5 +20,7 @@ ADD Gemfile* $APP_HOME/
 RUN bundle install
 
 ADD . $APP_HOME
-RUN yarn install && yarn upgrade
-RUN rake assets:precompile
+ENV NODE_ENV development
+RUN yarn install --check-files
+RUN rails assets:precompile; exit 0
+RUN rails assets:precompile
