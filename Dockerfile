@@ -47,6 +47,7 @@ FROM ruby:2.6.5-alpine as Final
 # Add Alpine packages
 RUN apk add --update --no-cache \
     mysql-client \
+    mariadb-dev \
     imagemagick \
     nano \
     tzdata \
