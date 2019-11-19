@@ -2,8 +2,8 @@
 # Stage: Builder
 FROM ruby:2.6.5-alpine as Builder
 
-ENV RAILS_ENV=production
-ENV NODE_ENV=production
+ENV RAILS_ENV=development
+ENV NODE_ENV=development
 ENV SECRET_KEY_BASE=ignore
 ENV RAILS_SERVE_STATIC_FILES=true
 
