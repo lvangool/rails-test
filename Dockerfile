@@ -2,11 +2,6 @@
 # Stage: Builder
 FROM ruby:2.6.5-alpine as Builder
 
-ARG FOLDERS_TO_REMOVE
-ARG BUNDLE_WITHOUT
-ARG RAILS_ENV
-
-ENV BUNDLE_WITHOUT=${BUNDLE_WITHOUT}
 ENV RAILS_ENV=production
 ENV SECRET_KEY_BASE=ignore
 ENV RAILS_SERVE_STATIC_FILES=true
@@ -43,21 +38,15 @@ ADD . /app
 # Precompile assets
 RUN bundle exec rake assets:precompile
 
-# Remove folders not needed in resulting image
-RUN rm -rf $FOLDERS_TO_REMOVE
-
 ###############################
 # Stage Final
-FROM ruby:2.6.5-alpine
-
-ARG ADDITIONAL_PACKAGES
+FROM ruby:2.6.5-alpine as Final
 
 # Add Alpine packages
 RUN apk add --update --no-cache \
     mysql-client \
     imagemagick \
     nano \
-    $ADDITIONAL_PACKAGES \
     tzdata \
     file
 
